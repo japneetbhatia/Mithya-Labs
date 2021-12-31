@@ -3,10 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import {appReducer} from "./reducers/appReducer"
+
+let initialState = {
+  studentData: [],
+  act: 0,
+  index: ""
+}
+
+var store = createStore(appReducer, initialState)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}><App /></Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
