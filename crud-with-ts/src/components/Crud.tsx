@@ -30,7 +30,7 @@ const Crud: React.FC = () => {
 				<h1>CRUD-APP</h1>
 			</div>		
 			<div className='bottom-crud'>
-				<div className='botton-left-crud'>
+				<div className='bottom-left-crud'>
 					<Data students={students} setStudents={setStudents} />
 				</div>
 				<div className='bottom-right-crud'>

@@ -1,5 +1,7 @@
 import React from 'react'
 import {IState} from "./Model"
+import "./Data.css"
+import SingleData from './SingleData'
 
 interface Props{
     students: IState[];
@@ -8,10 +10,18 @@ interface Props{
 
 const DataTable: React.FC<Props> = ({students, setStudents}) => {
     return (
-        <div className='table-data'>
-            <h1>students.name</h1>
-            <h1>students.enrollment</h1>
-            <h1>students.cgpa</h1>
+        <div className='data-table'>
+            {
+                students.map((student) => {
+                    <SingleData student={student} key={student.id} students={students} setStudents={setStudents}/>
+                    // <>
+                    //     <li>{x.name}</li>
+                    //     <li>{x.enrollment}</li>
+                    //     <li>{x.cgpa}</li>
+                    //      console.log(x.name);
+                    // </>
+                }) 
+            }
         </div>
     )
 }
