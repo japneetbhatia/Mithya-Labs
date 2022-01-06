@@ -1,9 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "../App"
 
 const AddStudentForm = props => {
-	const initialFormState = { id: null, name: '', enrollment: '', cgpa: '' }
-	const [ student, setStudent ] = useState(initialFormState)
+	// if(!props.act) {
+		// const initialFormState = { id: null, name: '', enrollment: '', cgpa: '' }
+		const [ student, setStudent ] = useState([])
+	// }
+	// if(props.act) {
+		// const [ student, setStudent ] = useState(props.currentStudent)
+
+		useEffect(
+			() => {
+		  	setStudent(props.currentStudent)
+			},
+			[ props ]
+		)
+	// }
 
 	const handleInputChange = e => {
 		const { name, value } = e.target
@@ -17,8 +29,10 @@ const AddStudentForm = props => {
 				e.preventDefault()
 				if (!student.name || !student.enrollment || !student.cgpa) return
 
-				props.addStudent(student)
-				setStudent(initialFormState)
+				// if(!props.act) props.addStudent(student)			
+				
+				if(props.act) props.updateStudent(student.id, student)
+				// setStudent(initialFormState)
 			}}
 		>
 			<label>Name</label>
@@ -28,6 +42,9 @@ const AddStudentForm = props => {
 			<label>CGPA</label>
 			<input type="text" name="cgpa" value={student.cgpa} onChange={handleInputChange} />
 			<button className='tablebutton'>Add</button>
+			<button onClick={() => props.setAct(false)} className="mybutton">
+        		Cancel
+      		</button>
 		</form>
 	)
 }

@@ -44,11 +44,11 @@ const App = () => {
 				</div>
         <div className="form">
 					{act ? (
-						<EditStudentForm
+						<AddStudentForm
 								act={act}
 								setAct={setAct}
-								currentStudent={currentStudent}
-								updateStudent={updateStudent}
+								// currentStudent={currentStudent}
+								// updateStudent={updateStudent}
 							/>
 					) : (
 							<AddStudentForm addStudent={addStudent} />

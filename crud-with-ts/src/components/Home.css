@@ -1,0 +1,24 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(230, 217, 243);
+}
+
+.heading {
+    height: 25%;
+    width: 100%;
+}
+
+.go-to-crud {
+    height: 75%;
+    width: 100%;
+}
+
+button {
+    height: 40px;
+    width: 120px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(177, 114, 240);
+    cursor: pointer;
+}

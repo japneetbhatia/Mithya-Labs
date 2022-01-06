@@ -1,0 +1,40 @@
+.container-crud {
+    height: 100vh;
+    width: 100vw;
+}
+
+.heading-crud {
+    height: 10%;
+    width: 100%;
+    background-color: coral;
+}
+
+.bottom-crud {
+    height: 90%;
+    width: 100%;
+    background-color: #d11515;
+    display: flex;
+}
+
+.bottom-left-crud {
+    width: 50%;
+    border-right: 1px solid #e5e5;
+    height: 100%;   
+    background-color: darkgray;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.bottom-right-crud {
+    width: 50%;
+    height: 100%;
+    margin-right: 0;
+    margin-left: auto;
+    background-color: darkorange;
+}
+
+
+  
+  
+  
+  
